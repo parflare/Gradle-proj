@@ -1,0 +1,17 @@
+name: Java CI with Gradle
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Встановлення JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+    - name: Збірка Gradle
+      run: gradle build
